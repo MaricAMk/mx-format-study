@@ -1,0 +1,8 @@
+# Minimal deps to run this project's own tests (tests/) and the microxcaling
+# submodule's plain-PyTorch (non-custom_cuda) path -- what CI installs.
+# The full local dev environment (numpy, scipy, matplotlib, Pillow, CUDA
+# build tools) is documented in README.md and isn't needed here.
+torch==2.5.1
+numpy
+pytest
+packaging  # required by mx/convolution.py's version check, imported via mx/__init__.py

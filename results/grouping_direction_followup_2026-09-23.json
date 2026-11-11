@@ -1,0 +1,344 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B",
+  "dataset": "wikitext-2-raw-v1 test",
+  "seq_len": 2048,
+  "windows": 8,
+  "max_abs_weight": 3.0625,
+  "runs": [
+    {
+      "format": "NVFP4",
+      "arm": "a-red",
+      "target": "activations",
+      "direction": "reduction (hidden)",
+      "causal": false,
+      "config": {
+        "group_size": 16,
+        "scale_format": {
+          "name": "E4M3",
+          "exp_bits": 4,
+          "mantissa_bits": 3,
+          "bias": 7,
+          "max_value": 448.0
+        },
+        "element_format": {
+          "name": "E2M1",
+          "bits": 4,
+          "exp_bits": 2,
+          "mantissa_bits": 1,
+          "bias": 1,
+          "max_value": null
+        },
+        "axis": -1,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 8.727184779562295,
+      "seconds": 748.2059063911438
+    },
+    {
+      "format": "NVFP4",
+      "arm": "a-tok",
+      "target": "activations",
+      "direction": "tokens",
+      "causal": false,
+      "config": {
+        "group_size": 16,
+        "scale_format": {
+          "name": "E4M3",
+          "exp_bits": 4,
+          "mantissa_bits": 3,
+          "bias": 7,
+          "max_value": 448.0
+        },
+        "element_format": {
+          "name": "E2M1",
+          "bits": 4,
+          "exp_bits": 2,
+          "mantissa_bits": 1,
+          "bias": 1,
+          "max_value": null
+        },
+        "axis": -2,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 8.639706750893374,
+      "seconds": 872.4222548007965
+    },
+    {
+      "format": "NVFP4",
+      "arm": "a-tok-causal",
+      "target": "activations",
+      "direction": "tokens (causal)",
+      "causal": true,
+      "config": {
+        "group_size": 16,
+        "scale_format": {
+          "name": "E4M3",
+          "exp_bits": 4,
+          "mantissa_bits": 3,
+          "bias": 7,
+          "max_value": 448.0
+        },
+        "element_format": {
+          "name": "E2M1",
+          "bits": 4,
+          "exp_bits": 2,
+          "mantissa_bits": 1,
+          "bias": 1,
+          "max_value": null
+        },
+        "axis": -2,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 8.622110413718065,
+      "seconds": 893.5609302520752
+    },
+    {
+      "format": "NVFP4-nearest",
+      "arm": "w-red",
+      "target": "weights",
+      "direction": "reduction (in)",
+      "causal": false,
+      "config": {
+        "group_size": 16,
+        "scale_format": {
+          "name": "E4M3",
+          "exp_bits": 4,
+          "mantissa_bits": 3,
+          "bias": 7,
+          "max_value": 448.0
+        },
+        "element_format": {
+          "name": "E2M1",
+          "bits": 4,
+          "exp_bits": 2,
+          "mantissa_bits": 1,
+          "bias": 1,
+          "max_value": null
+        },
+        "axis": -1,
+        "scale_round": "nearest",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 8.73403756246641,
+      "weight_diagnostics": {
+        "relative_mse": 0.009657371590234888,
+        "clipped_frac": 0.03744264429404574,
+        "zeroed_frac": 0.07281378127422844,
+        "median_log2_spread": 5.338585376739502,
+        "p99_log2_spread": 11.436863899230957
+      },
+      "seconds": 360.57768964767456
+    },
+    {
+      "format": "NVFP4-nearest",
+      "arm": "w-out",
+      "target": "weights",
+      "direction": "output channels",
+      "causal": false,
+      "config": {
+        "group_size": 16,
+        "scale_format": {
+          "name": "E4M3",
+          "exp_bits": 4,
+          "mantissa_bits": 3,
+          "bias": 7,
+          "max_value": 448.0
+        },
+        "element_format": {
+          "name": "E2M1",
+          "bits": 4,
+          "exp_bits": 2,
+          "mantissa_bits": 1,
+          "bias": 1,
+          "max_value": null
+        },
+        "axis": 0,
+        "scale_round": "nearest",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 8.843808152104756,
+      "weight_diagnostics": {
+        "relative_mse": 0.009608262446659228,
+        "clipped_frac": 0.037043722213006294,
+        "zeroed_frac": 0.07474242443559455,
+        "median_log2_spread": 5.367116928100586,
+        "p99_log2_spread": 11.469945907592773
+      },
+      "seconds": 23435.438121557236
+    },
+    {
+      "format": "NVFP4-nearest",
+      "arm": "a-red",
+      "target": "activations",
+      "direction": "reduction (hidden)",
+      "causal": false,
+      "config": {
+        "group_size": 16,
+        "scale_format": {
+          "name": "E4M3",
+          "exp_bits": 4,
+          "mantissa_bits": 3,
+          "bias": 7,
+          "max_value": 448.0
+        },
+        "element_format": {
+          "name": "E2M1",
+          "bits": 4,
+          "exp_bits": 2,
+          "mantissa_bits": 1,
+          "bias": 1,
+          "max_value": null
+        },
+        "axis": -1,
+        "scale_round": "nearest",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 8.637159887461095,
+      "seconds": 706.2397680282593
+    },
+    {
+      "format": "NVFP4-nearest",
+      "arm": "a-tok",
+      "target": "activations",
+      "direction": "tokens",
+      "causal": false,
+      "config": {
+        "group_size": 16,
+        "scale_format": {
+          "name": "E4M3",
+          "exp_bits": 4,
+          "mantissa_bits": 3,
+          "bias": 7,
+          "max_value": 448.0
+        },
+        "element_format": {
+          "name": "E2M1",
+          "bits": 4,
+          "exp_bits": 2,
+          "mantissa_bits": 1,
+          "bias": 1,
+          "max_value": null
+        },
+        "axis": -2,
+        "scale_round": "nearest",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 8.721121478648033,
+      "seconds": 860.8539323806763
+    },
+    {
+      "format": "NVFP4-nearest",
+      "arm": "a-tok-causal",
+      "target": "activations",
+      "direction": "tokens (causal)",
+      "causal": true,
+      "config": {
+        "group_size": 16,
+        "scale_format": {
+          "name": "E4M3",
+          "exp_bits": 4,
+          "mantissa_bits": 3,
+          "bias": 7,
+          "max_value": 448.0
+        },
+        "element_format": {
+          "name": "E2M1",
+          "bits": 4,
+          "exp_bits": 2,
+          "mantissa_bits": 1,
+          "bias": 1,
+          "max_value": null
+        },
+        "axis": -2,
+        "scale_round": "nearest",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 8.555044376143151,
+      "seconds": 1070.7547821998596
+    },
+    {
+      "format": "MXFP4",
+      "arm": "a-tok-causal",
+      "target": "activations",
+      "direction": "tokens (causal)",
+      "causal": true,
+      "config": {
+        "group_size": 32,
+        "scale_format": {
+          "name": "E8M0",
+          "exp_bits": 8,
+          "mantissa_bits": 0,
+          "bias": 127,
+          "max_value": null
+        },
+        "element_format": {
+          "name": "E2M1",
+          "bits": 4,
+          "exp_bits": 2,
+          "mantissa_bits": 1,
+          "bias": 1,
+          "max_value": null
+        },
+        "axis": -2,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 9.444276822362683,
+      "seconds": 978.8854141235352
+    },
+    {
+      "format": "BFP4",
+      "arm": "a-tok-causal",
+      "target": "activations",
+      "direction": "tokens (causal)",
+      "causal": true,
+      "config": {
+        "group_size": 32,
+        "scale_format": {
+          "name": "E8M0",
+          "exp_bits": 8,
+          "mantissa_bits": 0,
+          "bias": 127,
+          "max_value": null
+        },
+        "element_format": {
+          "name": "mantissa4",
+          "bits": 4,
+          "exp_bits": 0,
+          "mantissa_bits": 0,
+          "bias": 0,
+          "max_value": null
+        },
+        "axis": -2,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 8.882543930406465,
+      "seconds": 811.8534290790558
+    }
+  ],
+  "fp32_ppl": 8.09804254774529
+}

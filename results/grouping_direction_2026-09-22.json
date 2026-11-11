@@ -1,0 +1,513 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B",
+  "dataset": "wikitext-2-raw-v1 test",
+  "seq_len": 2048,
+  "windows": 8,
+  "runs": [
+    {
+      "format": "MXFP4",
+      "target": "weights",
+      "direction": "reduction (in)",
+      "config": {
+        "group_size": 32,
+        "scale_format": {
+          "name": "E8M0",
+          "exp_bits": 8,
+          "mantissa_bits": 0,
+          "bias": 127
+        },
+        "element_format": {
+          "name": "E2M1",
+          "bits": 4,
+          "exp_bits": 2,
+          "mantissa_bits": 1,
+          "bias": 1
+        },
+        "axis": -1,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 9.130216173231242,
+      "weight_diagnostics": {
+        "relative_mse": 0.013735172437791808,
+        "clipped_frac": 0.02583133549440284,
+        "zeroed_frac": 0.09215320115472947,
+        "median_log2_spread": 6.5279316902160645,
+        "p99_log2_spread": 12.639118194580078
+      },
+      "seconds": 442.69489455223083
+    },
+    {
+      "format": "MXFP4",
+      "target": "weights",
+      "direction": "output channels",
+      "config": {
+        "group_size": 32,
+        "scale_format": {
+          "name": "E8M0",
+          "exp_bits": 8,
+          "mantissa_bits": 0,
+          "bias": 127
+        },
+        "element_format": {
+          "name": "E2M1",
+          "bits": 4,
+          "exp_bits": 2,
+          "mantissa_bits": 1,
+          "bias": 1
+        },
+        "axis": 0,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 9.10751353934343,
+      "weight_diagnostics": {
+        "relative_mse": 0.01392581154492979,
+        "clipped_frac": 0.025373261181914172,
+        "zeroed_frac": 0.09556697816455684,
+        "median_log2_spread": 6.569020748138428,
+        "p99_log2_spread": 12.683815956115723
+      },
+      "seconds": 511.7929484844208
+    },
+    {
+      "format": "MXFP4",
+      "target": "activations",
+      "direction": "reduction (hidden)",
+      "config": {
+        "group_size": 32,
+        "scale_format": {
+          "name": "E8M0",
+          "exp_bits": 8,
+          "mantissa_bits": 0,
+          "bias": 127
+        },
+        "element_format": {
+          "name": "E2M1",
+          "bits": 4,
+          "exp_bits": 2,
+          "mantissa_bits": 1,
+          "bias": 1
+        },
+        "axis": -1,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 9.961368067340876,
+      "seconds": 826.840039730072
+    },
+    {
+      "format": "MXFP4",
+      "target": "activations",
+      "direction": "tokens",
+      "config": {
+        "group_size": 32,
+        "scale_format": {
+          "name": "E8M0",
+          "exp_bits": 8,
+          "mantissa_bits": 0,
+          "bias": 127
+        },
+        "element_format": {
+          "name": "E2M1",
+          "bits": 4,
+          "exp_bits": 2,
+          "mantissa_bits": 1,
+          "bias": 1
+        },
+        "axis": -2,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 9.100243314107164,
+      "seconds": 796.6847062110901
+    },
+    {
+      "format": "BFP4",
+      "target": "weights",
+      "direction": "reduction (in)",
+      "config": {
+        "group_size": 32,
+        "scale_format": {
+          "name": "E8M0",
+          "exp_bits": 8,
+          "mantissa_bits": 0,
+          "bias": 127
+        },
+        "element_format": {
+          "name": "mantissa4",
+          "bits": 4,
+          "exp_bits": 0,
+          "mantissa_bits": 0,
+          "bias": 0
+        },
+        "axis": -1,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 9.7944417824321,
+      "weight_diagnostics": {
+        "relative_mse": 0.01816969026412635,
+        "clipped_frac": 0.008925951972585909,
+        "zeroed_frac": 0.18199218621774882,
+        "median_log2_spread": 6.5279316902160645,
+        "p99_log2_spread": 12.639118194580078
+      },
+      "seconds": 478.7167615890503
+    },
+    {
+      "format": "BFP4",
+      "target": "weights",
+      "direction": "output channels",
+      "config": {
+        "group_size": 32,
+        "scale_format": {
+          "name": "E8M0",
+          "exp_bits": 8,
+          "mantissa_bits": 0,
+          "bias": 127
+        },
+        "element_format": {
+          "name": "mantissa4",
+          "bits": 4,
+          "exp_bits": 0,
+          "mantissa_bits": 0,
+          "bias": 0
+        },
+        "axis": 0,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 9.588841515004743,
+      "weight_diagnostics": {
+        "relative_mse": 0.019034074565403198,
+        "clipped_frac": 0.008894033077098027,
+        "zeroed_frac": 0.18868650518068555,
+        "median_log2_spread": 6.569020748138428,
+        "p99_log2_spread": 12.683815956115723
+      },
+      "seconds": 467.7551817893982
+    },
+    {
+      "format": "BFP4",
+      "target": "activations",
+      "direction": "reduction (hidden)",
+      "config": {
+        "group_size": 32,
+        "scale_format": {
+          "name": "E8M0",
+          "exp_bits": 8,
+          "mantissa_bits": 0,
+          "bias": 127
+        },
+        "element_format": {
+          "name": "mantissa4",
+          "bits": 4,
+          "exp_bits": 0,
+          "mantissa_bits": 0,
+          "bias": 0
+        },
+        "axis": -1,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 11.044885233945857,
+      "seconds": 742.2862915992737
+    },
+    {
+      "format": "BFP4",
+      "target": "activations",
+      "direction": "tokens",
+      "config": {
+        "group_size": 32,
+        "scale_format": {
+          "name": "E8M0",
+          "exp_bits": 8,
+          "mantissa_bits": 0,
+          "bias": 127
+        },
+        "element_format": {
+          "name": "mantissa4",
+          "bits": 4,
+          "exp_bits": 0,
+          "mantissa_bits": 0,
+          "bias": 0
+        },
+        "axis": -2,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 9.260005185878613,
+      "seconds": 743.7210321426392
+    },
+    {
+      "format": "NVFP4",
+      "target": "weights",
+      "direction": "reduction (in)",
+      "config": {
+        "group_size": 16,
+        "scale_format": {
+          "name": "E4M3",
+          "exp_bits": 4,
+          "mantissa_bits": 3,
+          "bias": 7
+        },
+        "element_format": {
+          "name": "E2M1",
+          "bits": 4,
+          "exp_bits": 2,
+          "mantissa_bits": 1,
+          "bias": 1
+        },
+        "axis": -1,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 9.441699840238805,
+      "weight_diagnostics": {
+        "relative_mse": 0.012005393621137232,
+        "clipped_frac": 0.0935942438804135,
+        "zeroed_frac": 0.06575866048934222,
+        "median_log2_spread": 5.338585376739502,
+        "p99_log2_spread": 11.436863899230957
+      },
+      "seconds": 453.10784792900085
+    },
+    {
+      "format": "NVFP4",
+      "target": "weights",
+      "direction": "output channels",
+      "config": {
+        "group_size": 16,
+        "scale_format": {
+          "name": "E4M3",
+          "exp_bits": 4,
+          "mantissa_bits": 3,
+          "bias": 7
+        },
+        "element_format": {
+          "name": "E2M1",
+          "bits": 4,
+          "exp_bits": 2,
+          "mantissa_bits": 1,
+          "bias": 1
+        },
+        "axis": 0,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 10.282314415695755,
+      "weight_diagnostics": {
+        "relative_mse": 0.011937032044194561,
+        "clipped_frac": 0.09172512312420085,
+        "zeroed_frac": 0.06843046285286576,
+        "median_log2_spread": 5.367116928100586,
+        "p99_log2_spread": 11.469945907592773
+      },
+      "seconds": 468.4790620803833
+    },
+    {
+      "format": "NVFP4",
+      "target": "activations",
+      "direction": "reduction (hidden)",
+      "config": {
+        "group_size": 16,
+        "scale_format": {
+          "name": "E4M3",
+          "exp_bits": 4,
+          "mantissa_bits": 3,
+          "bias": 7
+        },
+        "element_format": {
+          "name": "E2M1",
+          "bits": 4,
+          "exp_bits": 2,
+          "mantissa_bits": 1,
+          "bias": 1
+        },
+        "axis": -1,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 8.73929601848951,
+      "seconds": 959.9946208000183
+    },
+    {
+      "format": "NVFP4",
+      "target": "activations",
+      "direction": "tokens",
+      "config": {
+        "group_size": 16,
+        "scale_format": {
+          "name": "E4M3",
+          "exp_bits": 4,
+          "mantissa_bits": 3,
+          "bias": 7
+        },
+        "element_format": {
+          "name": "E2M1",
+          "bits": 4,
+          "exp_bits": 2,
+          "mantissa_bits": 1,
+          "bias": 1
+        },
+        "axis": -2,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 8.636490455924035,
+      "seconds": 886.0983235836029
+    },
+    {
+      "format": "BFP8",
+      "target": "weights",
+      "direction": "reduction (in)",
+      "config": {
+        "group_size": 32,
+        "scale_format": {
+          "name": "E8M0",
+          "exp_bits": 8,
+          "mantissa_bits": 0,
+          "bias": 127
+        },
+        "element_format": {
+          "name": "mantissa8",
+          "bits": 8,
+          "exp_bits": 0,
+          "mantissa_bits": 0,
+          "bias": 0
+        },
+        "axis": -1,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 8.108652774872562,
+      "weight_diagnostics": {
+        "relative_mse": 7.61050513165947e-05,
+        "clipped_frac": 0.0001861538682855955,
+        "zeroed_frac": 0.011578216033727945,
+        "median_log2_spread": 6.5279316902160645,
+        "p99_log2_spread": 12.639118194580078
+      },
+      "seconds": 466.3508825302124
+    },
+    {
+      "format": "BFP8",
+      "target": "weights",
+      "direction": "output channels",
+      "config": {
+        "group_size": 32,
+        "scale_format": {
+          "name": "E8M0",
+          "exp_bits": 8,
+          "mantissa_bits": 0,
+          "bias": 127
+        },
+        "element_format": {
+          "name": "mantissa8",
+          "bits": 8,
+          "exp_bits": 0,
+          "mantissa_bits": 0,
+          "bias": 0
+        },
+        "axis": 0,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 8.107086467641064,
+      "weight_diagnostics": {
+        "relative_mse": 7.95519243176786e-05,
+        "clipped_frac": 0.0001875872419280212,
+        "zeroed_frac": 0.011994596575202347,
+        "median_log2_spread": 6.569020748138428,
+        "p99_log2_spread": 12.683815956115723
+      },
+      "seconds": 498.64750266075134
+    },
+    {
+      "format": "BFP8",
+      "target": "activations",
+      "direction": "reduction (hidden)",
+      "config": {
+        "group_size": 32,
+        "scale_format": {
+          "name": "E8M0",
+          "exp_bits": 8,
+          "mantissa_bits": 0,
+          "bias": 127
+        },
+        "element_format": {
+          "name": "mantissa8",
+          "bits": 8,
+          "exp_bits": 0,
+          "mantissa_bits": 0,
+          "bias": 0
+        },
+        "axis": -1,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 8.113354601102408,
+      "seconds": 750.3418755531311
+    },
+    {
+      "format": "BFP8",
+      "target": "activations",
+      "direction": "tokens",
+      "config": {
+        "group_size": 32,
+        "scale_format": {
+          "name": "E8M0",
+          "exp_bits": 8,
+          "mantissa_bits": 0,
+          "bias": 127
+        },
+        "element_format": {
+          "name": "mantissa8",
+          "bits": 8,
+          "exp_bits": 0,
+          "mantissa_bits": 0,
+          "bias": 0
+        },
+        "axis": -2,
+        "scale_round": "floor",
+        "element_round": "rne",
+        "overflow_policy": "saturate",
+        "seed": null
+      },
+      "ppl": 8.096149493933389,
+      "seconds": 779.6091110706329
+    }
+  ],
+  "fp32_ppl": 8.09804254774529
+}
